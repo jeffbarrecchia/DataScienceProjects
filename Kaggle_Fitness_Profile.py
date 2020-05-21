@@ -1,8 +1,3 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-"""
-Created on Wed May 20 15:15:20 2020
-
 @author: jeffbarrecchia
 """
 import pandas as pd
@@ -13,7 +8,7 @@ from sklearn import linear_model
 
 data = pd.read_csv('~/Documents/Kaggle_Projects/CardioGoodFitness.csv')
 
-# data.hist()
+# data.hist(figsize=(10, 10))
 # sb.boxplot(x = 'Gender', y = 'Age', data = data)
 
 # =============================================================================
@@ -29,6 +24,8 @@ data = pd.read_csv('~/Documents/Kaggle_Projects/CardioGoodFitness.csv')
 # =============================================================================
 
 # sb.countplot(x = 'Product', hue = 'Gender', data = data)
+# sb.countplot(x = 'Product', hue = 'Income', data = data)
+# sb.countplot(x = 'Product', hue = 'Fitness', data = data)
 
 # =============================================================================
 # Makes histograms representing Gender/Age, Gender/Income, Gender/Miles, 
@@ -74,6 +71,17 @@ data = pd.read_csv('~/Documents/Kaggle_Projects/CardioGoodFitness.csv')
 regr = linear_model.LinearRegression()
 
 # =============================================================================
+# 
+# =============================================================================
+
+# plt.ylabel('Miles Planned')
+# plt.xlabel('Current Fitness Level')
+# plt.scatter(data['Fitness'], data['Miles'])
+# sb.swarmplot(x = data['Gender'], y = data['Miles'])
+# sb.swarmplot(x = data['Gender'], y = data['Income'])
+# sb.pairplot(data)
+
+# =============================================================================
 # Regression based on their planned usage and their current fitness level to
 # predict how many miles they want to ride
 # =============================================================================
@@ -82,6 +90,8 @@ regr = linear_model.LinearRegression()
 # y = data['Miles']
 
 # regr.fit(x, y)
+
+# plt.scatter(data['Usage'], data['Fitness'])
 
 # print(regr.coef_)
 # print(regr.intercept_)
@@ -100,6 +110,7 @@ regr = linear_model.LinearRegression()
 
 # regr.fit(x_1, y_1)
 
+# plt.scatter(x_1, y_1)
 # print(regr.coef_)
 # print(regr.intercept_)
 
